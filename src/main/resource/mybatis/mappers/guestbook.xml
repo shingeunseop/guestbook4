@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="guestbook">
+
+   
+  
+  <!-- 인서트 문 -->
+  <insert id="insert" parameterType="com.guestbook.vo.GuestbooksVo">
+   <![CDATA[
+    insert into guestbooks
+    values(seq_guestbooks_no.nextval,#{name},#{password},#{content})
+     ]]>
+  
+  </insert>
+  
+   <select id="getList" resultType="com.guestbook.vo.GuestbookVo">
+      <![CDATA[
+      
+        select no, name, content, reg_date
+        from guestbooks
+        order by no desc
+      
+      ]]>
+  
+  </select>
+  
+  <select id="getByteNo" parameterType="int" resultType="com.emaillist.vo.EmaillistVo">
+  
+     <![CDATA[
+      
+        select no, last_name lastName, first_name firstName,email
+        from emaillist
+        where no=#{no}
+      
+      ]]>
+  
+  
+  
+  
+  </select>
+  
+  <select id="getByMap" parameterType="map" resultType="com.emaillist.vo.EmaillistVo">
+     <![CDATA[
+     
+      select no,last_name lastName, first_name firstName,email
+      from emaillist
+      where last_name=#{lastName}
+      or email=#{email}
+  
+   ]]>
+  
+  
+  </select>
+  
+  
+</mapper>
