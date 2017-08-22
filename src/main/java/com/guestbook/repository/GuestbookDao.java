@@ -22,6 +22,7 @@ public class GuestbookDao {
 
 	public List<GuestbookVo> getList() {
 		List<GuestbookVo> list=sqlSession.selectList("guestbook.getList");
+		
 		return list;
 
 }

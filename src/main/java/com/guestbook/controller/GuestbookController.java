@@ -24,12 +24,14 @@ public class GuestbookController {
 		List<GuestbookVo> list = dao.getList();
 		System.out.println(list.toString());
 		model.addAttribute("list", list);
+		
 
 		return "/list";
 	}
 
 	@RequestMapping("/deleteform")
 	public String deleteform() {
+		
 				
 
 		return "/deleteform";

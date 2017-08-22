@@ -6,7 +6,7 @@
    
   
   <!-- 인서트 문 -->
-  <insert id="insert" parameterType="com.guestbook.vo.GuestbooksVo">
+  <insert id="insert" parameterType="com.guestbook.vo.GuestbookVo">
    <![CDATA[
     insert into guestbooks
     values(seq_guestbooks_no.nextval,#{name},#{password},#{content})
@@ -25,33 +25,6 @@
   
   </select>
   
-  <select id="getByteNo" parameterType="int" resultType="com.emaillist.vo.EmaillistVo">
-  
-     <![CDATA[
-      
-        select no, last_name lastName, first_name firstName,email
-        from emaillist
-        where no=#{no}
-      
-      ]]>
-  
-  
-  
-  
-  </select>
-  
-  <select id="getByMap" parameterType="map" resultType="com.emaillist.vo.EmaillistVo">
-     <![CDATA[
-     
-      select no,last_name lastName, first_name firstName,email
-      from emaillist
-      where last_name=#{lastName}
-      or email=#{email}
-  
-   ]]>
-  
-  
-  </select>
   
   
 </mapper>

@@ -87,7 +87,7 @@ public class GuestbookVo {
 
 	@Override
 	public String toString() {
-		return "GuestbooksVo [no=" + no + ", name=" + name + ", password=" + password + ", content=" + content
+		return "GuestbookVo [no=" + no + ", name=" + name + ", password=" + password + ", content=" + content
 				+ ", reg_date=" + reg_date + "]";
 	}
 	
